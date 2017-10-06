@@ -1,4 +1,4 @@
-library(openintro)
+suppressPackageStartupMessages(library(openintro))
 data(COL)
 
 AddShadedPlot <- function(x, y, offset,
@@ -16,7 +16,7 @@ AddText <- function(x, text) {
   text(x, 0.549283, text)
 }
 
-pdf('subtracting2Areas.pdf', 4, 0.7)
+#pdf('subtracting2Areas.pdf', 4, 0.7)
 par(las = 1,
     mar = rep(0, 4),
     mgp = c(3, 0, 0))
@@ -49,5 +49,5 @@ lines(c(8 + 3, 2 * 8 - 3), c(0.2, 0.2), lwd = 3)
 text(20, 0.549283,
      ' = ')
 segments(rep(19, 2), c(0.17, 0.23), rep(21, 2), lwd = 3)
-dev.off()
+#dev.off()
 
