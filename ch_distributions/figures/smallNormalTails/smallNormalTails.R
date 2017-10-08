@@ -1,9 +1,10 @@
-library(openintro)
+suppressPackageStartupMessages(library(openintro))
 
-myPDF("smallNormalTails.pdf", 4.56, 1.2,
-      mar = c(1.3, 1, 0.5, 1),
-      mgp = c(3, 0.27, 0),
-      mfrow = c(1, 2))
+#myPDF("smallNormalTails.pdf", 4.56, 1.2,
+#      mar = c(1.3, 1, 0.5, 1),
+#      mgp = c(3, 0.27, 0),
+#      mfrow = c(1, 2))
+par(mfrow=c(1,2))
 
 X <- seq(-4, 4, 0.01)
 Y <- dnorm(X)
@@ -11,7 +12,8 @@ Y <- dnorm(X)
 plot(X, Y,
      type = 'l',
      axes = FALSE,
-     xlim = c(-3.4, 3.4))
+     xlim = c(-3.4, 3.4),
+     xlab='',ylab='')
 at = c(-5, -0.8, 0, 5)
 labels = c(-5, '-Z', 0, 5)
 axis(1, at, labels, cex.axis = 0.7)
@@ -28,7 +30,8 @@ lines(c(0, 0), c(0, dnorm(0)),
 plot(X, Y,
      type = 'l',
      axes = FALSE,
-     xlim = c(-3.4, 3.4))
+     xlim = c(-3.4, 3.4),
+     xlab='',ylab='')
 axis(1,
      at = c(-5, 0.8, 0, 5),
      labels = c(-5, 'Z', 0,5),
@@ -44,4 +47,4 @@ lines(c(0, 0),
       col = '#CCCCCC',
       lty = 3)
 
-dev.off()
+#dev.off()
