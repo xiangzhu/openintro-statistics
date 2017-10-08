@@ -1,15 +1,16 @@
-library(openintro)
+suppressPackageStartupMessages(library(openintro))
 data(COL)
 
-myPDF("6895997.pdf", 5, 2.5,
-      mar = c(2, 0, 0, 0))
+#myPDF("6895997.pdf", 5, 2.5,
+#      mar = c(2, 0, 0, 0))
 X <- seq(-4, 4, 0.01)
 Y <- dnorm(X)
 plot(X, Y,
      type = 'n',
      axes = FALSE,
      xlim = c(-3.2, 3.2),
-     ylim = c(0, 0.4))
+     ylim = c(0, 0.4),
+     xlab = '', ylab= '')
 abline(h = 0, col = COL[6])
 at <- -3:3
 labels <- expression(mu - 3 * sigma,
@@ -59,4 +60,4 @@ text(0, 0.22, '68%', pos = 3)
 
 lines(X, Y, col = '#888888')
 abline(h = 0, col = '#AAAAAA')
-dev.off()
+#dev.off()
