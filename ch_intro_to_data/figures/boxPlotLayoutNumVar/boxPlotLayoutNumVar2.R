@@ -7,34 +7,34 @@ d   <- email50$num_char
 #      mar = c(0, 4, 0, 1),
 #      mgp = c(2.8, 0.7, 0))
 boxPlot(d,
-        ylab = 'Number of Characters (in thousands)',
+        ylab = '',
         xlim = c(0.3, 3),
         axes = FALSE,
         ylim = range(d))
 axis(2)
 
 arrows(2,0, 1.35, min(d) - 0.5, length = 0.08)
-text(2, 0, 'lower whisker', pos = 4)
+text(2, 0, 'A?', pos = 4)
 
 arrows(2, quantile(d, 0.25) + sd(d) / 7,
        1.35, quantile(d, 0.25),
        length = 0.08)
 text(2, quantile(d, 0.25) + sd(d)/6.5,
-     expression(Q[1]~~'(first quartile)'), pos = 4)
+     'B?', pos = 4)
 
 m <- median(d)
 arrows(2, m + sd(d) / 5, 1.35, m, length = 0.08)
-text(2,m + sd(d) / 4.7, 'median', pos = 4)
+text(2,m + sd(d) / 4.7, 'C?', pos = 4)
 
 q <- quantile(d, 0.75)
 arrows(2, q + sd(d) / 4, 1.35, q, length = 0.08)
 text(2, q + sd(d) / 3.8,
-     expression(Q[3]~~'(third quartile)'), pos = 4)
+     'D?', pos = 4)
 
 arrows(2, rev(sort(d))[4] - sd(d) / 7,
        1.35, rev(sort(d))[4], length = 0.08)
 text(2, rev(sort(d))[4] - sd(d) / 6.8,
-     'upper whisker', pos = 4)
+     'E?', pos = 4)
 
 y <- quantile(d, 0.75) + 1.5 * IQR(d)
 arrows(2, y - 0.1 * sd(d),
@@ -49,7 +49,7 @@ s <- m[1] - 0.3 * sd(m)
 arrows(2, s, 1.1, m[1] - 0.2, length = 0.08)
 arrows(2, s, 1.1, m[2] + 0.3, length = 0.08)
 arrows(2, s, 1.1, m[3] + 0.35, length = 0.08)
-text(2, s, 'suspected outliers', pos = 4)
+text(2, s, 'F?', pos = 4)
 
 points(rep(0.4, 25), rev(sort(d))[1:25],
        cex = rep(1.3, 25),
