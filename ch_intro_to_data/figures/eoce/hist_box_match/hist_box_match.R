@@ -1,5 +1,5 @@
 # load openintro package for colors ---------------------------------
-library(openintro)
+suppressPackageStartupMessages(library(openintro))
 
 # generate data -----------------------------------------------------
 set.seed(7365)
@@ -9,7 +9,7 @@ uni = runif(1000, min = 0, max = 100)
 rs = rgamma(1000, shape = 3, rate = 2)
 
 # histograms and box plots ------------------------------------------
-pdf("hist_box_match.pdf", width = 10, height = 3)
+#pdf("hist_box_match.pdf", width = 10, height = 3)
 par(mar=c(4, 3.6, 0, 0), las = 1, mgp = c(2.7, 0.7, 0), 
     mfrow = c(1,6), 
     cex.lab = 1.5, cex.axis = 1.5)
@@ -27,4 +27,4 @@ boxPlot(rs, xlab = "(1)", ylab = "", col = COL[1,3])
 boxPlot(sym, xlab = "(2)", ylab = "", col = COL[1,3])
 boxPlot(uni, xlab = "(3)", ylab = "", col = COL[1,3])
 
-dev.off()
+#dev.off()
