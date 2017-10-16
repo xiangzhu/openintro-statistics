@@ -1,4 +1,4 @@
-library(openintro)
+suppressPackageStartupMessages(library(openintro))
 data(COL)
 
 obs <- c(-110, -9, -60, 316, -200, -196,
@@ -11,22 +11,23 @@ obs <- c(-110, -9, -60, 316, -200, -196,
          -100, -295, -1000, 361, -95,
          337, 3712, -255)
 
-M  <- mean(obs)
-SD <- sd(obs)
+M  <- mean(obs/50)
+SD <- sd(obs/50)
 x <- seq(min(obs) - 3000,
          max(obs) + 3000,
          1)
+x <- x/50
 y <- dnorm(x, M, SD)
-myPDF("pokerNormal.pdf", 6.5, 2.7,
-      mfrow = 1:2,
-      mgp = c(2, 0.5, 0),
-      mar = c(3, 0.5, 0.5, 2))
-histPlot(obs,
-         xlab = 'Poker earnings (US$)',
+#myPDF("pokerNormal.pdf", 6.5, 2.7,
+par(mfrow = 1:2,
+    mgp = c(2, 0.5, 0),
+    mar = c(3, 0.5, 0.5, 2))
+histPlot(obs/50,
+         xlab = 'Poker average earnings (US$)',
          ylab = '',
          axes = FALSE,
          main = '',
-         xlim = c(-2000, 4000),
+         xlim = c(-2000, 4000)/50,
          probability = TRUE,
          col = COL[1])
 axis(1,
@@ -38,15 +39,15 @@ lines(x, y,
 par(mar = c(3, 2, 0.5, 0.5),
     mgp = c(2.8, 0.5, 0),
     cex.axis = 0.8)
-qqnorm(obs,
+qqnorm(obs/50,
        cex = 0.8, col = COL[1], lwd = 2,
        main = '',
        axes = FALSE,
        xlab = '',
        ylab = '')
-mtext('Theoretical quantiles',
+mtext('Theoretical quantiles of standard normal',
       line = 2,
       side = 1)
 axis(1)
 axis(2)
-dev.off()
+#dev.off()
