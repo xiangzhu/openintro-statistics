@@ -4,8 +4,9 @@ data(COL)
 d   <- email50$num_char
 
 #myPDF("boxPlotLayoutNumVar.pdf", 5.5, 3.8,
-#      mar = c(0, 4, 0, 1),
-#      mgp = c(2.8, 0.7, 0))
+par(
+      mar = c(0, 4, 0, 1),
+      mgp = c(2.8, 0.7, 0))
 boxPlot(d,
         ylab = 'Number of Characters (in thousands)',
         xlim = c(0.3, 3),
