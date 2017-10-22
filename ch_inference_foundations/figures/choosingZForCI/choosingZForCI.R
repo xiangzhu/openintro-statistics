@@ -1,7 +1,8 @@
-library(openintro)
+suppressPackageStartupMessages(library(openintro))
 data(COL)
 
-myPDF('choosingZForCI.pdf', 7.56, 3.84,
+#myPDF('choosingZForCI.pdf', 7.56, 3.84,
+par(
       mar=c(3.3, 1, 0.5, 1),
       mgp=c(2.1, 0.6, 0))
 normTail(M = c(-1.96, 1.96),
@@ -31,4 +32,4 @@ lines(rep(-2.58,2), c(0,yMax), lty=2, col='#00000055')
 lines(rep( 2.58,2), c(0,yMax), lty=2, col='#00000055')
 text(0, yMax, '99%, extends -2.58 to 2.58', pos=3)
 
-dev.off()
+#dev.off()
