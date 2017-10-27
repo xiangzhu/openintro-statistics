@@ -1,7 +1,8 @@
-library(openintro)
+suppressPackageStartupMessages(library(openintro))
 data(COL)
 
-myPDF('pValueOneSidedSleepStudyExplained.pdf', 6.875, 2.75,
+#myPDF('pValueOneSidedSleepStudyExplained.pdf', 6.875, 2.75,
+par(
       mar=c(2, 0, 0.5, 0),
       mgp=c(3, 0.65, 0))
 normTail(U = 2.18,
@@ -45,7 +46,7 @@ text(xLoc, 0.73 * yMax,
      cex=1,
      col=COL[1])
 text(xLoc, 0.63 * yMax,
-     expression('more favorable towards '*H[A]*","),
+     expression('more favorable towards '*H[1]*","),
      pos=4,
      cex=1,
      col=COL[1])
@@ -55,4 +56,4 @@ text(xLoc, 0.53 * yMax,
      cex=1,
      col=COL[1])
 abline(h=0)
-dev.off()
+#dev.off()
