@@ -1,4 +1,4 @@
-library(openintro)
+suppressPackageStartupMessages(library(openintro))
 data(COL)
 data(run10)
 set.seed(52)
@@ -6,7 +6,8 @@ set.seed(52)
 # This still references run10, but the actual range of values
 # isn't shown, so just tweaking the printed value.
 
-myPDF('95PercentConfidenceInterval.pdf', 6, 3.4,
+#myPDF('95PercentConfidenceInterval.pdf', 6, 3.4,
+par(
       mar = c(1.7, 1, 0, 1),
       mgp = c(2.7, 0.7, 0))
 m <- 94.52
@@ -32,7 +33,7 @@ plot(xR, yR,
      ylab = '',
      axes = FALSE)
 abline(v = m, lty = 2, col = COL[5,2])
-axis(1, at = m, expression(mu*' = 3.90'))
+axis(1, at = m, expression(theta))
 for(i in 1:k){
   ci <- means[i] + 2 * c(-1, 1) * SE[i]
   if(abs(means[i] - m) > 1.96 * SE[i]){
@@ -45,4 +46,4 @@ for(i in 1:k){
   points(means[i], i, pch = 20, cex = 1.2, col = col)
   lines(ci, rep(i, 2), col = col)
 }
-dev.off()
+#dev.off()
