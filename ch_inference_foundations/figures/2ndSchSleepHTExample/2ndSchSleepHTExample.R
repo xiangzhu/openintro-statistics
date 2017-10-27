@@ -1,7 +1,8 @@
-library(openintro)
+suppressPackageStartupMessages(library(openintro))
 data(COL)
 
-myPDF('2ndSchSleepHTExample.pdf', 6, 2.4,
+#myPDF('2ndSchSleepHTExample.pdf', 6, 2.4,
+par(
       mar = c(2, 0, 0.5, 0),
       mgp = c(3, 0.65, 0))
 normTail(L = -1.06,
@@ -41,4 +42,4 @@ text(1.35, yMax * 0.62,
      pos = 4,
      cex = 1,
      col = COL[1])
-dev.off()
+#dev.off()
