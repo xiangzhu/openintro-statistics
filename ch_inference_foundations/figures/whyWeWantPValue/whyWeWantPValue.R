@@ -1,7 +1,8 @@
-library(openintro)
+suppressPackageStartupMessages(library(openintro))
 data(COL)
 
-myPDF('whyWeWantPValue.pdf', 6.3, 2.5,
+#myPDF('whyWeWantPValue.pdf', 6.3, 2.5,
+par(
       mar = c(2, 1, 0.5, 1),
       mgp = c(2.1, 0.6, 0))
 normTail(L = -5,
@@ -31,4 +32,4 @@ text(-5, yMax / 3, expression('observed '*bar(x)),
      cex = 1.1,
      pos = 3,
      col = COL[1])
-dev.off()
+#dev.off()
