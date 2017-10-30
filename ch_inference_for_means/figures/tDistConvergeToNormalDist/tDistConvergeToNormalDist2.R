@@ -16,25 +16,25 @@ abline(h = 0)
 
 #COL. <- fadeColor(COL[1], c("FF", "89", "68", "4C", "33"))
 #COLt <- fadeColor(COL[1], c("FF", "AA", "85", "60", "45"))
-COL. <- c("#000000","#E69F00","#0072B2")
-COLt <- c("#000000","#E69F00","#0072B2")
-LNTY <- c("solid", "dashed", "dotted")
+COL. <- c("#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+COLt <- c("#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 
-DF   <- c('normal', 8, 1)
+DF   <- c('normal', 8, 4, 2, 1)
 
 X <- seq(-5, 10, 0.02)
 Y <- dnorm(X)
-lines(X, Y, col = COL.[1], lty = LNTY[1])
+lines(X, Y, col = COL.[1])
 
-for (i in 2:3) {
+for (i in 2:5) {
   Y <- dt(X, as.numeric(DF[i]))
-  lines(X, Y, col = COL.[i], lty = LNTY[i])
+  lines(X, Y, col = COL.[i])
 }
 
 legend(4.5, 0.4,
-       legend = rep("Which RV?", 3),
+       legend = c(DF[1],
+       paste('t, df = ', DF[2:5], sep = '')),
        col = COL.,
        text.col = COLt,
-       lty = LNTY)
+       lty = rep(1, 5))
 
 #dev.off()
