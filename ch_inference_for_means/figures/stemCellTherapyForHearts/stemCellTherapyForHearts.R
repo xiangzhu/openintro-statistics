@@ -1,4 +1,4 @@
-library(openintro)
+suppressPackageStartupMessages(library(openintro))
 data(COL)
 data(stem.cells)
 d <- stem.cells
@@ -6,7 +6,8 @@ d <- stem.cells
 change <- d$after - d$before
 t.test(change ~ d[,1])
 
-myPDF('stemCellTherapyForHearts.pdf', 4, 3.5,
+#myPDF('stemCellTherapyForHearts.pdf', 4, 3.5,
+par(
       mar=c(3.2, 1.8, 1.7, 0.7),
       mgp=c(2, 0.3, 0),
       mfrow=c(2, 1))
@@ -40,4 +41,4 @@ par(mgp=c(2, 0.6, 0))
 axis(2, at=0:3, cex.axis=0.925)
 mtext('Control (no treatment)', line=0.5, cex=1.1)
 mtext('Change in heart pumping function', 1, line=1.3, cex = 0.9)
-dev.off()
+#dev.off()
