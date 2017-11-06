@@ -1,7 +1,8 @@
-library(openintro)
+suppressPackageStartupMessages(library(openintro))
 data(COL)
 
-myPDF('chiSquareDistributionWithInceasingDF.pdf', 6.5, 3,
+#myPDF('chiSquareDistributionWithInceasingDF.pdf', 6.5, 3,
+par(
       mar = c(2, 0.5, 0.25, 0.5),
       mgp = c(2.1, 0.7, 0))
 x <- c(0, seq(0.0000001, 40, 0.05))
@@ -30,4 +31,4 @@ legend('topright',
        legend = paste(round(DF)),
        title = 'Degrees of Freedom',
        cex = 1)
-dev.off()
+#dev.off()
