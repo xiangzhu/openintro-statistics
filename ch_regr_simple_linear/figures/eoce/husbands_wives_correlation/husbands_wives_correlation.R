@@ -1,9 +1,9 @@
 # load packages -----------------------------------------------------
-library(openintro)
+suppressPackageStartupMessages(library(openintro))
 
 # load data ---------------------------------------------------------
 
-hw <- read.table("husbands_wives.txt", h = T, sep = "\t")
+hw <- read.table("~/GitHub/openintro-statistics/ch_regr_simple_linear/figures/eoce/husbands_wives_correlation/husbands_wives.txt", h = T, sep = "\t")
 
 # converts heights to inches ----------------------------------------
 
@@ -16,10 +16,10 @@ hw <- hw[!is.na(hw$age_wife),]
 
 # plot wife vs. husband age -----------------------------------------
 
-pdf("husbands_wives_age.pdf", 5.5, 4.3)
+#pdf("husbands_wives_age.pdf", 5.5, 4.3)
 
 par(mar = c(3.75, 3.75, 0.5, 0.5), las = 1, mgp = c(2.5, 0.7, 0), 
-    cex.lab = 1.5, cex.axis = 1.5)
+    cex.lab = 1.5, cex.axis = 1.5, mfrow = c(1,2))
 
 plot(hw$age_wife ~ hw$age_husband, 
      xlab = "Husband's age (in years)", 
@@ -30,14 +30,14 @@ axis(1, at = seq(20,60,20))
 axis(2, at = seq(20,60,20))
 box()
 
-dev.off()
+#dev.off()
 
 # plot wife vs. husband height --------------------------------------
 
-pdf("husbands_wives_height.pdf", 5.5, 4.3)
+#pdf("husbands_wives_height.pdf", 5.5, 4.3)
 
-par(mar = c(3.75, 3.75, 0.5, 0.5), las = 1, mgp = c(2.5, 0.7, 0), 
-    cex.lab = 1.5, cex.axis = 1.5)
+#par(mar = c(3.75, 3.75, 0.5, 0.5), las = 1, mgp = c(2.5, 0.7, 0), 
+#    cex.lab = 1.5, cex.axis = 1.5)
 
 plot(hw$ht_wife_in ~ hw$ht_husband_in, 
      xlab = "Husband's height (in inches)", 
@@ -48,4 +48,4 @@ axis(1, at = seq(60, 75, 5))
 axis(2, at = seq(55, 70, 5))
 box()
 
-dev.off()
+#dev.off()
