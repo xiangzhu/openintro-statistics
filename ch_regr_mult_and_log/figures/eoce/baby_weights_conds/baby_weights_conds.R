@@ -1,9 +1,9 @@
 # load packages -----------------------------------------------------
-library(openintro)
+suppressPackageStartupMessages(library(openintro))
 
 # load data ---------------------------------------------------------
 
-babies <- read.csv("babies.csv")
+babies <- read.csv("~/GitHub/openintro-statistics/ch_regr_mult_and_log/figures/eoce/baby_weights_conds/babies.csv")
 
 # mlr for birth weight ----------------------------------------------
 
@@ -16,10 +16,10 @@ babies_cc <- na.omit(babies)
 
 # normal prob plot for residuals ------------------------------------
 
-pdf("baby_weights_conds_normal_qq.pdf", 5.5, 4.3)
+#pdf("baby_weights_conds_normal_qq.pdf", 5.5, 4.3)
 
 par(mar = c(3.7,3.9, 0.5, 0.5), las = 1, mgp = c(2.7,0.7,0),
-    cex.lab = 1.5, cex.axis = 1.5)
+    cex.lab = 1.5, cex.axis = 1.5, mfrow=c(4,2))
 
 qqnorm(m_bwt_mlr$residuals, 
        ylab = "Residuals", main = "",
@@ -31,14 +31,14 @@ box()
 
 qqline(m_bwt_mlr$residuals, col = COL[1])
 
-dev.off()
+#dev.off()
 
 # absolute values of residuals against fitted -----------------------
 
-pdf("baby_weights_conds_abs_res_fitted.pdf", 5.5, 4.3)
+#pdf("baby_weights_conds_abs_res_fitted.pdf", 5.5, 4.3)
 
-par(mar = c(3.7, 3.9, 0.5, 0.5), las = 1, mgp = c(2.7,0.7,0),
-    cex.lab = 1.5, cex.axis = 1.5)
+#par(mar = c(3.7, 3.9, 0.5, 0.5), las = 1, mgp = c(2.7,0.7,0),
+#    cex.lab = 1.5, cex.axis = 1.5)
 
 plot(m_bwt_mlr$residuals ~ m_bwt_mlr$fitted.values, 
      ylab = "Residuals", xlab = "Fitted values", 
@@ -50,14 +50,14 @@ box()
 
 abline(h = 0, lty = 2)
 
-dev.off()
+#dev.off()
 
 # residuals in order of their data collection -----------------------
 
-pdf("baby_weights_conds_res_order.pdf", 5.5, 4.3)
+#pdf("baby_weights_conds_res_order.pdf", 5.5, 4.3)
 
-par(mar = c(3.7, 3.9, 0.5, 1), las = 1, mgp = c(2.7,0.7,0),
-    cex.lab = 1.5, cex.axis = 1.5)
+#par(mar = c(3.7, 3.9, 0.5, 1), las = 1, mgp = c(2.7,0.7,0),
+#    cex.lab = 1.5, cex.axis = 1.5)
 
 plot(m_bwt_mlr$residuals ~ c(1:length(m_bwt_mlr$residuals)), 
      ylab = "Residuals", xlab = "Order of collection",
@@ -68,14 +68,14 @@ box()
 
 abline(h = 0, lty = 2)
 
-dev.off()
+#dev.off()
 
 # residuals vs. gestation -------------------------------------------
 
-pdf("baby_weights_conds_res_gestation.pdf", 5.5, 4.3)
+#pdf("baby_weights_conds_res_gestation.pdf", 5.5, 4.3)
 
-par(mar = c(3.9, 3.9, 0.5, 0.5), las = 1, mgp = c(2.7, 0.7,0),
-    cex.lab = 1.5, cex.axis = 1.5)
+#par(mar = c(3.9, 3.9, 0.5, 0.5), las = 1, mgp = c(2.7, 0.7,0),
+#    cex.lab = 1.5, cex.axis = 1.5)
 
 plot(m_bwt_mlr$residuals ~ babies_cc$gestation, 
      ylab = "Residuals", xlab = "Length of gestation", 
@@ -87,14 +87,14 @@ box()
 
 abline(h = 0, lty = 2)
 
-dev.off()
+#dev.off()
 
 # residuals vs. parity -------------------------------------------
 
-pdf("baby_weights_conds_res_parity.pdf", 5.5, 4.3)
+#pdf("baby_weights_conds_res_parity.pdf", 5.5, 4.3)
 
-par(mar = c(3.9, 3.9, 0.5, 0.5), las = 1, mgp = c(2.7, 0.7,0),
-    cex.lab = 1.5, cex.axis = 1.5)
+#par(mar = c(3.9, 3.9, 0.5, 0.5), las = 1, mgp = c(2.7, 0.7,0),
+#    cex.lab = 1.5, cex.axis = 1.5)
 
 plot(m_bwt_mlr$residuals ~ babies_cc$parity, 
      ylab = "Residuals", xlab = "Parity", 
@@ -106,14 +106,14 @@ box()
 
 abline(h = 0, lty = 2)
 
-dev.off()
+#dev.off()
 
 # residuals vs. height -------------------------------------------
 
-pdf("baby_weights_conds_res_height.pdf", 5.5, 4.3)
+#pdf("baby_weights_conds_res_height.pdf", 5.5, 4.3)
 
-par(mar = c(3.9, 3.9, 0.5, 0.5), las = 1, mgp = c(2.7, 0.7,0),
-    cex.lab = 1.5, cex.axis = 1.5)
+#par(mar = c(3.9, 3.9, 0.5, 0.5), las = 1, mgp = c(2.7, 0.7,0),
+#    cex.lab = 1.5, cex.axis = 1.5)
 
 plot(m_bwt_mlr$residuals ~ babies_cc$height, 
      ylab = "Residuals", xlab = "Height of mother", 
@@ -125,14 +125,14 @@ box()
 
 abline(h = 0, lty = 2)
 
-dev.off()
+#dev.off()
 
 # residuals vs. weight -------------------------------------------
 
-pdf("baby_weights_conds_res_weight.pdf", 5.5, 4.3)
+#pdf("baby_weights_conds_res_weight.pdf", 5.5, 4.3)
 
-par(mar = c(3.9, 3.9, 0.5, 0.5), las = 1, mgp = c(2.7, 0.7,0),
-    cex.lab = 1.5, cex.axis = 1.5)
+#par(mar = c(3.9, 3.9, 0.5, 0.5), las = 1, mgp = c(2.7, 0.7,0),
+#    cex.lab = 1.5, cex.axis = 1.5)
 
 plot(m_bwt_mlr$residuals ~ babies_cc$weight, 
      ylab = "Residuals", xlab = "Weight of mother", 
@@ -144,14 +144,14 @@ box()
 
 abline(h = 0, lty = 2)
 
-dev.off()
+#dev.off()
 
 # residuals vs. smoke -------------------------------------------
 
-pdf("baby_weights_conds_res_smoke.pdf", 5.5, 4.3)
+#pdf("baby_weights_conds_res_smoke.pdf", 5.5, 4.3)
 
-par(mar = c(3.9, 3.9, 0.5, 0.5), las = 1, mgp = c(2.7, 0.7,0),
-    cex.lab = 1.5, cex.axis = 1.5)
+#par(mar = c(3.9, 3.9, 0.5, 0.5), las = 1, mgp = c(2.7, 0.7,0),
+#    cex.lab = 1.5, cex.axis = 1.5)
 
 plot(m_bwt_mlr$residuals ~ babies_cc$smoke, 
      ylab = "Residuals", xlab = "Smoke", 
@@ -163,4 +163,4 @@ box()
 
 abline(h = 0, lty = 2)
 
-dev.off()
+#dev.off()
