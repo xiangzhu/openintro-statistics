@@ -1,4 +1,4 @@
-library(openintro)
+suppressPackageStartupMessages(library(openintro))
 data(COL)
 
 at <- c(0, 137, 170)
@@ -48,6 +48,6 @@ createWt <- function(at, wt, size = 1){
        col = COL[1])
 }
 
-myPDF('bookWts.pdf', 5.5, 3)
+#myPDF('bookWts.pdf', 5.5, 3)
 createWtSystem(at, wt, 5, TRUE)
-dev.off()
+#dev.off()
