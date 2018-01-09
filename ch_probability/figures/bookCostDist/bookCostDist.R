@@ -1,4 +1,4 @@
-library(openintro)
+suppressPackageStartupMessages(library(openintro))
 data(COL)
 
 make.bar <- function(at,
@@ -52,7 +52,7 @@ probDist <- function(x,
   make.bar(x, prob, thickness = thickness, col = col)
 }
 
-myPDF('bookCostDist.pdf', 5, 2.3)
+#myPDF('bookCostDist.pdf', 5, 2.3)
 at <- c(0, 137, 170)
 prob <- c(0.2, .55, .25)
 
@@ -70,4 +70,4 @@ polygon(117.85 + c(-17, 17, 0),
         col = COL[4])
 par(las = 0)
 mtext('Probability', side = 2, line = 2.8)
-dev.off()
+#dev.off()
