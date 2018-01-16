@@ -1,7 +1,7 @@
-library(openintro)
+suppressPackageStartupMessages(library(openintro))
 data(COL)
 
-pdf('complementOfD.pdf', 4, 1.05)
+#pdf('complementOfD.pdf', 4, 1.05)
 par(mar = rep(0, 4))
 plot(c(-0.05, 1), c(0.18, 0.92), type = 'n', axes = FALSE)
 
@@ -49,4 +49,4 @@ y <- c(y, y[1])
 lines(x, y, lty = 1, col = COL[1])
 text(0, 0.55, expression(S), col = COL[1], pos = 2, cex = 1.3)
 
-dev.off()
+#dev.off()
