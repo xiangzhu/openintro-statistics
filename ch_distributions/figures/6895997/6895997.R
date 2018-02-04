@@ -2,7 +2,7 @@ suppressPackageStartupMessages(library(openintro))
 data(COL)
 
 #myPDF("6895997.pdf", 5, 2.5,
-#      mar = c(2, 0, 0, 0))
+par(mar = c(2, 0, 0, 0))
 X <- seq(-4, 4, 0.01)
 Y <- dnorm(X)
 plot(X, Y,
