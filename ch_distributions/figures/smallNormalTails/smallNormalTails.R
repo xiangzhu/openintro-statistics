@@ -1,10 +1,11 @@
 suppressPackageStartupMessages(library(openintro))
 
 #myPDF("smallNormalTails.pdf", 4.56, 1.2,
-#      mar = c(1.3, 1, 0.5, 1),
-#      mgp = c(3, 0.27, 0),
-#      mfrow = c(1, 2))
-par(mfrow=c(1,2))
+par(
+      mar = c(1.3, 1, 0.5, 1),
+      mgp = c(3, 0.27, 0),
+      mfrow = c(1, 2))
+#par(mfrow=c(1,2))
 
 X <- seq(-4, 4, 0.01)
 Y <- dnorm(X)
