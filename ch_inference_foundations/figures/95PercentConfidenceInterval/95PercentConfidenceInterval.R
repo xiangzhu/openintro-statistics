@@ -1,7 +1,7 @@
 suppressPackageStartupMessages(library(openintro))
 data(COL)
 data(run10)
-set.seed(52)
+#set.seed(52)
 
 # This still references run10, but the actual range of values
 # isn't shown, so just tweaking the printed value.
@@ -16,7 +16,7 @@ n <- 100
 k <- 25
 SE <- s/sqrt(n)
 
-set.seed(3)
+#set.seed(3)
 means <- c()
 SE    <- c()
 for(i in 1:k){
