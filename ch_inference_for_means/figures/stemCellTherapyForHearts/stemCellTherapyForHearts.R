@@ -10,7 +10,7 @@ t.test(change ~ d[,1])
 par(
       mar=c(3.2, 1.8, 1.7, 0.7),
       mgp=c(2, 0.3, 0),
-      mfrow=c(2, 1))
+      mfrow=c(1,2))
 histPlot(change[d[,1] == 'esc'],
          xlim=c(-10, 15),
          axes=FALSE,
@@ -27,7 +27,7 @@ mtext('Change in heart pumping function', 1, line=1.3, cex = 0.9)
 par(mgp=c(2, 0.6, 0))
 axis(2, at=0:3, cex.axis=0.925)
 
-par(mar=c(2.4, 1.8, 2, 0.7),
+par(mar=c(3.2, 1.8, 1.7, 0.7),
     mgp=c(2, 0.3, 0))
 histPlot(change[d[,1] == 'ctrl'],
          xlim=c(-10, 15),
