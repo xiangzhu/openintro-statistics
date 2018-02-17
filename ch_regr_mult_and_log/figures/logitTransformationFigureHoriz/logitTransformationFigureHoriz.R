@@ -1,4 +1,4 @@
-library(openintro)
+suppressPackageStartupMessages(library(openintro))
 data(COL)
 p  <- seq(0.0001, 0.9999, 0.0002)
 lp <- log(p/(1-p))
@@ -9,7 +9,8 @@ adj  <- 0.07
 adj1 <- 0.02
 
 
-myPDF("logitTransformationFigureHoriz.pdf", 7, 4,
+#myPDF("logitTransformationFigureHoriz.pdf", 7, 4,
+par(
       mar = c(3.3, 3.4, 0.8, 0.8),
       mgp = c(2.1, 0.55, 0))
 
@@ -46,4 +47,4 @@ for (i in 1:length(LP)) {
        col = COL[5])
   
 }
-dev.off()
+#dev.off()
