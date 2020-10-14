@@ -16,7 +16,7 @@ labels <- expression('', 'null value '*-5*'×SE   ',
 axis(1, at, labels)
 yMax <- 0.4
 text(0, yMax / 2 - 0.02,
-     expression('Distribution of '*bar(x)),
+     expression('Distribution of '*bar(X)),
      cex = 1.1,
      col = COL[5])
 text(0, yMax / 3 - 0.01,
@@ -28,7 +28,7 @@ arrows(-5, yMax / 3,
        length = 0.1,
        lwd = 2,
        col = COL[1])
-text(-5, yMax / 3, expression('observed '*bar(x)),
+text(-5, yMax / 3, expression('observed '*bar(X)),
      cex = 1.1,
      pos = 3,
      col = COL[1])
