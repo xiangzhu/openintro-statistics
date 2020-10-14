@@ -12,7 +12,7 @@ normTail(U = 2.18,
          xlim=c(-3.8, 5.5),
          lwd = 2)
 at <- c(-5, 0, 0.37 / 0.17, 15)
-labels <- expression(0, 'null value', 'observed '*bar(x), 0)
+labels <- expression(0, 'null value', 'observed '*bar(X), 0)
 axis(1, at, labels, cex.axis=1.05)
 yMax <- 0.4
 
@@ -21,7 +21,7 @@ arrows(-1.67, yMax * 0.6,
        length=0.1,
        lwd=1.5)
 text(-1.5, yMax * 0.8,
-     expression('distribution of '*bar(x)),
+     expression('distribution of '*bar(X)),
      cex=1,
      pos=2)
 text(-1.5, yMax * 0.7,
@@ -36,12 +36,12 @@ arrows(2.56, yMax / 2.3,
        col=COL[1],
        lwd=1.5)
 text(xLoc, 0.83 * yMax,
-     expression('chance of observed '*bar(x)),
+     expression('chance of observed '*bar(X)),
      pos=4,
      cex=1,
      col=COL[1])
 text(xLoc, 0.73 * yMax,
-     expression('or another '*bar(x)*' that is even'),
+     expression('or another '*bar(X)*' that is even'),
      pos=4,
      cex=1,
      col=COL[1])
