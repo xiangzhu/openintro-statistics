@@ -9,12 +9,12 @@ normTail(L = -1.06,
          U = 1.06,
          col = COL[1],
          axes = FALSE)
-labels <- expression(bar(x)*' = 6.83')
+labels <- expression('observed '*bar(X))
 axis(1, at = -1.06, labels = labels, cex.axis = 0.87)
 
 par(mgp = c(3, 0.77, 0))
 at <- c(-15, 0, 5)
-labels <- expression(0, H[0]*': '*mu*' = 7', 0)
+labels <- expression(0, H[0]*': '*mu*' = 0', 0)
 axis(1, at, labels, cex.axis = 0.87)
 
 yMax <- dnorm(0)
@@ -33,12 +33,12 @@ arrows(1.7, yMax / 2,
        length = 0.1,
        col = COL[1],
        lwd = 1.5)
-text(1.35, yMax * 0.75, expression('observations just as'),
+text(1.35, yMax * 0.75, expression('observations just as extreme'),
      pos = 4,
      cex = 1,
      col = COL[1])
 text(1.35, yMax * 0.62,
-     expression('unusual as '*bar(x)*' under '*H[0]),
+     expression('as observed '*bar(X)*' under '*H[0]),
      pos = 4,
      cex = 1,
      col = COL[1])
